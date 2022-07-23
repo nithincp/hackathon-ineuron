@@ -4,6 +4,8 @@ import '../App.css';
 
 export default function Navbar(){
 
+    const [connect,setConnect] = React.useState(false)
+
     const authorizeMetamask = async() => {
         const { ethereum } = window
         console.log('inside the authorizeMetamask function')
@@ -24,7 +26,7 @@ export default function Navbar(){
 
     return (
         <div className="nav-bar">
-            <button onClick={authorizeMetamask}>Connect Wallet</button>
+            <button onClick={authorizeMetamask}>{}</button>
         </div>
     )
 }
