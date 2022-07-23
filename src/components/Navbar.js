@@ -5,7 +5,8 @@ import '../App.css';
 export default function Navbar(){
 
     const [connect,setConnect] = React.useState(false)
-
+    const [account,setAccount] = React.useState('')
+    
     const authorizeMetamask = async() => {
         const { ethereum } = window
         console.log('inside the authorizeMetamask function')
@@ -13,8 +14,9 @@ export default function Navbar(){
         if(provider){
           try{
             const accounts = await ethereum.request({method: 'eth_requestAccounts'})
-            const account = accounts[0]
+            setAccount(accounts[0])
             console.log(`The account currently logged in is ${account}`)
+            setConnect(true)
           }catch(e){
             console.error(e)
           }
@@ -26,7 +28,11 @@ export default function Navbar(){
 
     return (
         <div className="nav-bar">
-            <button onClick={authorizeMetamask}>{}</button>
+            <button onClick={authorizeMetamask}>
+                <span className="buttontext">
+                    {connect ? account : "Connect Wallet"}
+                </span>
+            </button>
         </div>
     )
 }
