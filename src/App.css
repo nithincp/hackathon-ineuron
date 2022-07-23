@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background-image: url('./images/background-img.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .App-logo {
@@ -14,7 +17,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -36,3 +39,21 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-bar{
+  display: flex;
+  justify-content: end;
+}
+
+
+button{
+  margin-top: 30px;
+  background-color: whitesmoke;
+  color: black;
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-weight: 900;
+  border: none;
+  margin-right: 50px;
+}
+
